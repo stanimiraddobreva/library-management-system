@@ -84,8 +84,6 @@ public class Controller {
 
     private Library library;
 
-    // Извиква се от Application.java веднага след зареждане на екрана,
-    // с вече готовия (логнат) Library обект.
     public void setLibrary(Library library) {
         this.library = library;
 
@@ -95,8 +93,6 @@ public class Controller {
         cmbSearchField.setItems(FXCollections.observableArrayList("Title", "Author", "Keyword", "Number"));
         cmbSearchField.getSelectionModel().selectFirst();
 
-        // Само admin вижда бутоните за администрация (add/remove user, add book) -
-        // client-ите не трябва изобщо да ги виждат, не само да им са disabled.
         boolean isAdmin = library.getLoggedInUser().isAdmin();
         adminBar.setVisible(isAdmin);
         adminBar.setManaged(isAdmin);
