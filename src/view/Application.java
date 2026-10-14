@@ -17,9 +17,6 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws Exception {
         this.stage = stage;
 
-        // Library-то се създава ТУК, веднъж, и се предава на всеки
-        // контролер - иначе всеки екран щеше да си прави своя собствена
-        // библиотека и данните щяха да "изчезват" при смяна на сцената.
         this.library = new Library();
         this.library.seedRandomBooks();
 
