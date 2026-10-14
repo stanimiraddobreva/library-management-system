@@ -6,7 +6,7 @@ A desktop library management application built in **Java** with a **JavaFX** gra
 
 The app simulates a real library workflow:
 
-- An **Admin** logs in and manages the catalogue (adds/removes books and users).
+- An **Admin** logs in and manages the catalogue (adds/manages books and users).
 - A **Client** logs in and browses, searches, and sorts the catalogue.
 - The library is pre-seeded with a set of randomly generated books on startup, so there's always sample data to explore.
 
@@ -27,14 +27,15 @@ The app simulates a real library workflow:
 
 - **Java** (core language, OOP design)
 - **JavaFX** + **FXML** for the GUI
-- **Java Collections & Streams API** for searching and sorting, Streams API for statistics (average rating, top-N, grouping by genre)
+- **Java Collections** for searching and sorting
+- **Streams API** for statistics (average rating, top-N, grouping by genre)
 
 ## OOP concepts demonstrated
 
 - **Inheritance & polymorphism** — abstract `User` class extended by `Admin` and `Client`, each overriding `isAdmin()` / `getRoleName()`
 - **Interfaces** — `RandomBookFactory` (extending `Supplier<List<Book>>`) for generating sample data
 - **Encapsulation & validation** — all model fields (`Book`, `User`) are private with validating setters that throw on invalid input
-- **`Comparable` / `Comparator`** — Comparator for single-field sorting (title, author, year, rating)
+- **`Comparator`** — Comparator for single-field sorting (title, author, year, rating)
 - **Records** — `LibraryStats` as an immutable data carrier
 - **Separation of concerns** — `model` (domain logic), `view` (JavaFX controllers/screens), `service` (data generation)
 
