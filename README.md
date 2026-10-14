@@ -19,7 +19,7 @@ The app simulates a real library workflow:
 - **Search** — by title, author, or keyword
 - **Sorting** — by title, author, year, or rating (ascending/descending)
 - **Statistics** — average rating, top-N rated books, grouping/counting books by genre
-- **User management** (admin only) — add and remove client accounts
+- **User management** (admin only) — add and manage client accounts
 - **Random data seeding** — auto-generates sample books for quick testing/demo
 - **Two interfaces** — a JavaFX GUI (`view.Application`) and a plain-text CLI (`Main`) sharing the same underlying model
 
@@ -27,14 +27,14 @@ The app simulates a real library workflow:
 
 - **Java** (core language, OOP design)
 - **JavaFX** + **FXML** for the GUI
-- **Java Collections & Streams API** for filtering, sorting, and grouping data
+- **Java Collections & Streams API** for searching and sorting, Streams API for statistics (average rating, top-N, grouping by genre)
 
 ## OOP concepts demonstrated
 
 - **Inheritance & polymorphism** — abstract `User` class extended by `Admin` and `Client`, each overriding `isAdmin()` / `getRoleName()`
 - **Interfaces** — `RandomBookFactory` (extending `Supplier<List<Book>>`) for generating sample data
 - **Encapsulation & validation** — all model fields (`Book`, `User`) are private with validating setters that throw on invalid input
-- **`Comparable` / `Comparator`** — natural ordering and flexible multi-field sorting for `Book`
+- **`Comparable` / `Comparator`** — Comparator for single-field sorting (title, author, year, rating)
 - **Records** — `LibraryStats` as an immutable data carrier
 - **Separation of concerns** — `model` (domain logic), `view` (JavaFX controllers/screens), `service` (data generation)
 
